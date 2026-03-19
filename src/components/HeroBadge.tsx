@@ -12,7 +12,7 @@ const HeroBadge = ({
   const navigate = useNavigate();
   return (
     <div
-      className={`w-fit px-8 py-1 rounded-full border border-primary text-xs md:text-sm font-semibold text-primary ${type === "mobile" && "block md:hidden mx-auto"} cursor-pointer`}
+      className={`w-fit px-8 py-1 rounded-full border border-primary text-xs md:text-sm font-semibold text-primary ${type === "mobile" ? "block md:hidden mx-auto" : "hidden md:block"} cursor-pointer`}
       onClick={() => navigate(href ?? "/")}
     >
       {text}

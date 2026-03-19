@@ -36,7 +36,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full py-3 flex items-center justify-between border-b dark:border-b-neutral-800 px-3 md:px-16 fixed top-0 left-0">
+    <nav className="w-full py-3 flex items-center justify-between border-b dark:border-b-neutral-800 px-3 md:px-16 fixed top-0 left-0 bg-background">
       <div className="flex items-center justify-center w-fit gap-1 h-full">
         <div className="flex items-center justify-center gap-2 md:hidden">
           <Menu className="size-4.5" />
