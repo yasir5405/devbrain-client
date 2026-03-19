@@ -1,7 +1,7 @@
 import { navLinks, toolLinks } from "@/constants/constant";
 import { Button } from "./ui/button";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "./ui/input-group";
-import { BrainCircuitIcon, Search } from "lucide-react";
+import { BrainCircuitIcon, Menu, Search } from "lucide-react";
 import { Kbd, KbdGroup } from "./ui/kbd";
 import { useNavigate } from "react-router-dom";
 import { ModeToggle } from "./ModeToggle";
@@ -37,12 +37,17 @@ const Navbar = () => {
 
   return (
     <nav className="w-full py-3 flex items-center justify-between border-b dark:border-b-neutral-800 px-3 md:px-12 fixed top-0 left-0">
-      <div className="flex items-center justify-center w-fit gap-2 h-full">
-        <Button variant={"ghost"} onClick={() => navigate("/")}>
+      <div className="flex items-center justify-center w-fit gap-1 h-full">
+        <Menu className="size-4.5 flex md:hidden" />
+        <Button
+          variant={"ghost"}
+          onClick={() => navigate("/")}
+          className="hidden md:flex"
+        >
           <BrainCircuitIcon className="size-4.25" />
         </Button>
 
-        <div className="flex items-center justify-center w-fit gap-1 h-full">
+        <div className="hidden md:flex items-center justify-center w-fit gap-1 h-full">
           {navLinks.map((link) => (
             <Button
               className="hover:no-underline text-xs"
@@ -56,8 +61,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center w-fit gap-4 h-full">
-        <InputGroup onClick={() => setOpen(true)}>
+      <div className="flex items-center justify-center w-fit gap-3 md:gap-4 h-full">
+        <InputGroup onClick={() => setOpen(true)} className="hidden md:flex">
           <InputGroupInput placeholder="Search tools or snippets..." />
 
           <InputGroupAddon>
@@ -106,13 +111,15 @@ const Navbar = () => {
           </Command>
         </CommandDialog>
 
-        <Separator orientation="vertical" />
+        <Separator orientation="vertical" className="hidden md:block" />
 
         <ModeToggle />
 
         <Separator orientation="vertical" />
 
-        <Button>Sign in</Button>
+        <Button size={"sm"}>
+          Sign in
+        </Button>
       </div>
     </nav>
   );
