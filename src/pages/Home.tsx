@@ -1,8 +1,14 @@
+import HeroBadge from "@/components/HeroBadge";
+import HeroSection from "@/components/HeroSection";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div className="h-full w-full flex flex-col">
+      <HeroBadge text="Developer Productivity Suite" type="mobile" />
 
-export default Home
+      <HeroSection />
+    </div>
+  );
+};
+
+export default Home;

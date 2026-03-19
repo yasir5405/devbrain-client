@@ -36,9 +36,12 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full py-3 flex items-center justify-between border-b dark:border-b-neutral-800 px-3 md:px-12 fixed top-0 left-0">
+    <nav className="w-full py-3 flex items-center justify-between border-b dark:border-b-neutral-800 px-3 md:px-16 fixed top-0 left-0">
       <div className="flex items-center justify-center w-fit gap-1 h-full">
-        <Menu className="size-4.5 flex md:hidden" />
+        <div className="flex items-center justify-center gap-2 md:hidden">
+          <Menu className="size-4.5" />
+          <p className="font-semibold">Menu</p>
+        </div>
         <Button
           variant={"ghost"}
           onClick={() => navigate("/")}
@@ -117,9 +120,7 @@ const Navbar = () => {
 
         <Separator orientation="vertical" />
 
-        <Button size={"sm"}>
-          Sign in
-        </Button>
+        <Button size={"sm"}>Sign in</Button>
       </div>
     </nav>
   );
